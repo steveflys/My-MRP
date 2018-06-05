@@ -1,5 +1,5 @@
-# Management-Resource-Planning
- MyMRP is a tool for material resource planning for a manufacturing business.  There are 2 initial apps.  The product app and the quote app.  The initial apps are configured for building and quoting simple cars.  The models can be expanded and the names changed to match the product being made and sold.  Future apps will be aded to allow for inventory management, raw material processing and controls, production planning, shipping, and labor management.
+# My-MRP
+ My MRP is a tool for material resource planning for a manufacturing business.  There are 2 initial apps.  The product app and the quote app.  The initial apps are configured for building and quoting simple cars.  The models can be expanded and the names changed to match the product being made and sold.  Future apps will be aded to allow for inventory management, raw material processing and controls, production planning, shipping, and labor management.
 
 # Version:  0.0.01
 

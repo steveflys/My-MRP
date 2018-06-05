@@ -9,8 +9,6 @@ import plotly.plotly as py
 import plotly
 
 
-
-
 def createSeries():
     """Creates Series Graph to represent an individual seller"""
     plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
@@ -29,7 +27,7 @@ def createSeries():
 def createGraph():
     """Create Visual for most popular models quoted."""
     vehicles = {}
-    colors = {}
+    # colors = {}
     car_models = VehicleQuote.objects.all()
     for car in [model.model_name.model_name for model in car_models]:
         if car not in vehicles:
