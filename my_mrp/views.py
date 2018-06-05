@@ -9,56 +9,56 @@ import plotly.plotly as py
 import plotly
 
 
-def createSeries():
-    """Creates Series Graph to represent an individual seller"""
-    plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
-    df = web.DataReader(
-        "aapl", 'morningstar',
-        datetime(2015, 1, 1),
-        datetime(2016, 7, 1)).reset_index()
+# def createSeries():
+#     """Creates Series Graph to represent an individual seller"""
+#     plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
+#     df = web.DataReader(
+#         "aapl", 'morningstar',
+#         datetime(2015, 1, 1),
+#         datetime(2016, 7, 1)).reset_index()
 
-    data = [go.Scatter(x=df.Date, y=df.High)]
-    fig = go.Figure(data = data)
-    py.image.save_as(fig, filename='my_mrp/static/series.png')
-    py.image.ishow(fig)
+#     data = [go.Scatter(x=df.Date, y=df.High)]
+#     fig = go.Figure(data = data)
+#     py.image.save_as(fig, filename='my_mrp/static/series.png')
+#     py.image.ishow(fig)
 
 
-# Generates Graph based on Data.
-def createGraph():
-    """Create Visual for most popular models quoted."""
-    vehicles = {}
-    # colors = {}
-    car_models = VehicleQuote.objects.all()
-    for car in [model.model_name.model_name for model in car_models]:
-        if car not in vehicles:
-                vehicles[car] = 1
-        else:
-            vehicles[car] += 1
-    try:
-        # Uses Plotly's API
-        plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
-        trace = go.Pie(
-            labels=list(vehicles.keys()),
-            values=list(vehicles.values())
-        )
-        # GRAPH DIMENSION.
-        layout = go.Layout(
-            title='Most Quoted Models',
-            width=800, height=640,
-            paper_bgcolor='rgb(27, 32, 46)',
-            font=dict(color='rgb(52, 156, 134)', size=30)
-        )
-        graph = go.Figure(data=[trace], layout=layout)
-        # Creates graph and saves it to the project.
-        print('-' * 45)
-        py.image.save_as(graph, filename='my_mrp/static/popular_models.png')
-        py.image.ishow(graph)
-    except:
-        print('[!] FATAL ERROR')
-        return False
-    finally:
-        print('[*] Finished Executing PLOTLY/DB Queries.')
-        print('-' * 45)
+# # Generates Graph based on Data.
+# def createGraph():
+#     """Create Visual for most popular models quoted."""
+#     vehicles = {}
+#     # colors = {}
+#     car_models = VehicleQuote.objects.all()
+#     for car in [model.model_name.model_name for model in car_models]:
+#         if car not in vehicles:
+#                 vehicles[car] = 1
+#         else:
+#             vehicles[car] += 1
+#     try:
+#         # Uses Plotly's API
+#         plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
+#         trace = go.Pie(
+#             labels=list(vehicles.keys()),
+#             values=list(vehicles.values())
+#         )
+#         # GRAPH DIMENSION.
+#         layout = go.Layout(
+#             title='Most Quoted Models',
+#             width=800, height=640,
+#             paper_bgcolor='rgb(27, 32, 46)',
+#             font=dict(color='rgb(52, 156, 134)', size=30)
+#         )
+#         graph = go.Figure(data=[trace], layout=layout)
+#         # Creates graph and saves it to the project.
+#         print('-' * 45)
+#         py.image.save_as(graph, filename='my_mrp/static/popular_models.png')
+#         py.image.ishow(graph)
+#     except:
+#         print('[!] FATAL ERROR')
+#         return False
+#     finally:
+#         print('[*] Finished Executing PLOTLY/DB Queries.')
+#         print('-' * 45)
 
 
 class HomeView(TemplateView):
@@ -69,8 +69,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self):
         """Create Graph."""
-        createSeries()
-        createGraph()
+        # createSeries()
+        # createGraph()
         return {}
 
 
