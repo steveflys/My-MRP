@@ -1,3 +1,4 @@
+"""Define the tests for the product app."""
 from django.test import TestCase
 from models import Vehicle
 from random import randint

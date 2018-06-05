@@ -1,5 +1,5 @@
+"""Define the tests."""
 from django.test import TestCase, Client
-from django.urls import reverse_lazy
 
 
 class BasicViewTests(TestCase):

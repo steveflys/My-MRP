@@ -1,7 +1,6 @@
 """Define the classes to add new vehicles and components."""
 
 from django.shortcuts import redirect
-from django.http import HttpResponse
 from django.views.generic import CreateView
 from product_vehicle.models import Vehicle, Engine, ExteriorColor, InteriorColor, Wheel, AudioSound
 from product_vehicle.forms import AddVehicleForm
@@ -29,6 +28,7 @@ class AddVehicleView(LoginRequiredMixin, CreateView):
         """Validate form."""
         form.instance.user = self.request.user
         return super().form_valid(form)
+
 
 class AddEngineView(LoginRequiredMixin, CreateView):
     """Add new engine."""
