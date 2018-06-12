@@ -1,12 +1,13 @@
 """Define the My MRP home and about_us views, make the charts and graphs for the dashboard."""
 
 from django.views.generic.base import TemplateView
-from vehicle_quote.models import VehicleQuote
-import pandas_datareader.data as web
-import plotly.graph_objs as go
-from datetime import datetime
-import plotly.plotly as py
-import plotly
+from django.shortcuts import redirect
+# from vehicle_quote.models import VehicleQuote
+# import pandas_datareader.data as web
+# import plotly.graph_objs as go
+# from datetime import datetime
+# import plotly.plotly as py
+# import plotly
 
 
 # def createSeries():
@@ -62,7 +63,10 @@ import plotly
 
 
 class HomeView(TemplateView):
-    """Make the HomeView class for the initial landing page for signing in and the salesman dashboard after signing in."""
+    """
+    Make the HomeView class for the initial landing page for signing in
+    and the salesman dashboard after signing in.
+    """
 
     template_name = 'generic/home.html'
     context_object_name = 'quotes'
